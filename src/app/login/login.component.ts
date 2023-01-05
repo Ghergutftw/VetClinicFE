@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {delay, timeout} from "rxjs";
+import {HardcodedAuthentificationService} from "../service/hardcoded-authentification.service";
 
 @Component({
   selector: 'app-login',
@@ -7,12 +9,30 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username : string | unknown
-  password : string | unknown
+  username : string  | undefined
+  password : string | undefined
+  invalidLogin : boolean | unknown
+  ERROR_MESSAGE = "Wrong password or username!"
+
+  constructor( public router : Router ,
+               public hardcodedAuthentificationService: HardcodedAuthentificationService) {
+  }
 
   handleLogin() {
-
+    console.log(`Username : ${this.username}`)
+    console.log(`Password : ${this.password}`)
+    if(this.hardcodedAuthentificationService.authentificate(this.username,this.password)){
+      this.invalidLogin = false;
+      this.router.navigate(['/welcome'])
+    }else{
+      this.invalidLogin = true;
+    }
   }
-  constructor(public router:Router) {
+  close() {
+    this.invalidLogin = false
+  }
+
+  LogSomething() {
+    console.log("SOMETHING")
   }
 }

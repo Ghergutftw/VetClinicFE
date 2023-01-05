@@ -10,6 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
 import {FormsModule} from "@angular/forms";
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
+import { AnimalListComponent } from './animal-list/animal-list.component';
+import { LogoutComponent } from './logout/logout.component';
+import { ConsultationsComponent } from './consultations/consultations.component';
+import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
+import { WorkingHoursComponent } from './working-hours/working-hours.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import {FormsModule} from "@angular/forms";
     FooterComponent,
     WelcomeComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    DoctorListComponent,
+    AnimalListComponent,
+    LogoutComponent,
+    ConsultationsComponent,
+    PrescriptionsComponent,
+    WorkingHoursComponent
   ],
   imports: [
     BrowserModule,

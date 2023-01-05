@@ -2,12 +2,17 @@ import { Component } from '@angular/core';
 import {HardcodedAuthentificationService} from "../service/hardcoded-authentification.service";
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'app-logout',
+  templateUrl: './logout.component.html',
+  styleUrls: ['./logout.component.css']
 })
-export class MenuComponent {
+export class LogoutComponent {
+
   constructor(public hardcodedAuthentificationService : HardcodedAuthentificationService) {
+  }
+
+  ngOnInit(): void{
+    this.hardcodedAuthentificationService.logOut()
   }
 
 }
