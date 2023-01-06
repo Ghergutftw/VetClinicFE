@@ -9,10 +9,12 @@ import {HardcodedAuthentificationService} from "../service/hardcoded-authentific
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  ERROR_MESSAGE = "Wrong password or username!"
+  // Delay de inchidere a popului wrong password (ms)
+  POPUP_DELAY = 4000;
   username : string  | undefined
   password : string | undefined
   invalidLogin : boolean | unknown
-  ERROR_MESSAGE = "Wrong password or username!"
 
   constructor( public router : Router ,
                public hardcodedAuthentificationService: HardcodedAuthentificationService) {
@@ -26,6 +28,7 @@ export class LoginComponent {
       this.router.navigate(['/welcome'])
     }else{
       this.invalidLogin = true;
+      this.changeInvalidLogin()
     }
   }
   close() {
@@ -34,5 +37,16 @@ export class LoginComponent {
 
   LogSomething() {
     console.log("SOMETHING")
+  }
+
+  changeInvalidLogin(){
+    setTimeout(() =>{
+      this.invalidLogin = false;
+    },this.POPUP_DELAY)
+  }
+  changeInvalidLoginInstantly(){
+    setTimeout(() =>{
+      this.invalidLogin = false;
+    },0)
   }
 }
