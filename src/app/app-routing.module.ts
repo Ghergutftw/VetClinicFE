@@ -9,7 +9,7 @@ import {AnimalListComponent} from "./animal-list/animal-list.component";
 import {ConsultationsComponent} from "./consultations/consultations.component";
 import {PrescriptionsComponent} from "./prescriptions/prescriptions.component";
 import {WorkingHoursComponent} from "./working-hours/working-hours.component";
-import {RouterGuardService} from "./service/router-guard.service";
+import {RouterGuardService} from "./service/route-guard.service/router-guard.service";
 
 const routes: Routes = [
   {path: '', component:LoginComponent},

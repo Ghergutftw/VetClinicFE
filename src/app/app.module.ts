@@ -16,6 +16,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ConsultationsComponent } from './consultations/consultations.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 import { WorkingHoursComponent } from './working-hours/working-hours.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -36,9 +37,10 @@ import { WorkingHoursComponent } from './working-hours/working-hours.component';
     BrowserModule,
     RouterOutlet,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
