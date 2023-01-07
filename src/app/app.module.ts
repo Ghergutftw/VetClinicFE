@@ -17,6 +17,9 @@ import { ConsultationsComponent } from './consultations/consultations.component'
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 import { WorkingHoursComponent } from './working-hours/working-hours.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { CreateDoctorComponent } from './doctor-list/create-doctor/create-doctor.component';
+import { UsersComponent } from './users/users.component';
+import { UpdateDoctorComponent } from './doctor-list/update-doctor/update-doctor.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     LogoutComponent,
     ConsultationsComponent,
     PrescriptionsComponent,
-    WorkingHoursComponent
+    WorkingHoursComponent,
+    CreateDoctorComponent,
+    UsersComponent,
+    UpdateDoctorComponent
   ],
   imports: [
     BrowserModule,

@@ -19,4 +19,21 @@ export class DataService {
   getAllAnimals(){
     return this.httpClient.get<Animal[]>(`http://localhost:8080/animals`)
   }
+
+  deleteDoctorById(id : number){
+    return this.httpClient.delete(`http://localhost:8080/doctors/${id}`)
+  }
+
+  updateDoctorById(id:number , doctor:Doctor){
+    return this.httpClient.put(`http://localhost:8080/doctors/${id}`,doctor)
+  }
+
+  createDoctor(doctor:Doctor){
+    return this.httpClient.post<Doctor>(`http://localhost:8080/doctor`,doctor)
+  }
+
+  retrieveDoctorById(id:number){
+    return this.httpClient.get<Doctor>(`http://localhost:8080/doctor/${id}`)
+  }
+
 }

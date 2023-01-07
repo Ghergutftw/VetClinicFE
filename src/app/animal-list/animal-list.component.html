@@ -6,22 +6,22 @@
     <thead class="thead-dark text-center">
     <tr class="table-header">
       <th>Avatar</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Speciality</th>
+      <th>Nickname</th>
+      <th>Animal Type</th>
+      <th>Species</th>
       <th>Age</th>
-      <th>Years Of Experience</th>
+      <th>Weight</th>
       <th colspan="2" class="text-center">EDIT</th>
     </tr>
     </thead>
     <tbody class="table-tabs text-center">
     <tr *ngFor="let animal of animals">
       <td>{{animal.id}}</td>
-      <td>{{animal.firstName}}</td>
-      <td>{{animal.lastName}}</td>
-      <td>{{animal.speciality}}</td>
+      <td>{{animal.nickname}}</td>
+      <td>{{animal.animalType}}</td>
+      <td>{{animal.species}}</td>
       <td>{{animal.age}}</td>
-      <td>{{animal.yearsOfExperience}}</td>
+      <td>{{animal.weight}}</td>
       <td><button class="btn btn-success justify-content-center" (click)="updateAnimal(animal.id)">Update</button></td>
       <td><button class="btn btn-danger" (click)="deleteAnimal(animal.id)">Delete</button></td>
     </tr>

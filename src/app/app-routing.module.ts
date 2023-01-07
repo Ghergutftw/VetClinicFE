@@ -10,12 +10,18 @@ import {ConsultationsComponent} from "./consultations/consultations.component";
 import {PrescriptionsComponent} from "./prescriptions/prescriptions.component";
 import {WorkingHoursComponent} from "./working-hours/working-hours.component";
 import {RouterGuardService} from "./service/route-guard.service/router-guard.service";
+import {CreateDoctorComponent} from "./doctor-list/create-doctor/create-doctor.component";
+import {UsersComponent} from "./users/users.component";
+import {UpdateDoctorComponent} from "./doctor-list/update-doctor/update-doctor.component";
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'welcome',component:WelcomeComponent , canActivate:[RouterGuardService]},
   {path: 'animals',component:AnimalListComponent , canActivate:[RouterGuardService]},
-  {path: 'doctor',component:DoctorListComponent , canActivate:[RouterGuardService]},
+  {path: 'doctors-list',component:DoctorListComponent , canActivate:[RouterGuardService]},
+  {path: 'create-doctor',component:CreateDoctorComponent , canActivate:[RouterGuardService]},
+  {path: 'update-doctor/:id',component:UpdateDoctorComponent , canActivate:[RouterGuardService]},
+  {path: 'users',component:UsersComponent , canActivate:[RouterGuardService]},
   {path: 'consultations',component:ConsultationsComponent , canActivate:[RouterGuardService]},
   {path: 'prescriptions',component:PrescriptionsComponent , canActivate:[RouterGuardService]},
   {path: 'workingHours',component:WorkingHoursComponent , canActivate:[RouterGuardService]},
