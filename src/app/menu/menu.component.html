@@ -1,9 +1,9 @@
 <header>
   <nav class = "navbar navbar-expand-md navbar-dark bg-dark" >
-    <div><a href="https://www.linkedin.com/in/gherguț-mădălin-740999237/" class="navbar-brand logo"> EU </a></div>
+    <div><a href="https://www.linkedin.com/in/gherguț-mădălin-740999237/" class="navbar-brand logo"> Connect with me </a></div>
     <ul class="navbar-nav">
       <li><a *ngIf="hardcodedAuthentificationService.isUserLoggedIn()" class="nav-link" routerLink="/doctors-list">DOCTORS</a></li>
-      <li><a *ngIf="hardcodedAuthentificationService.isUserLoggedIn()" class="nav-link" routerLink="/animals">ANIMALS</a></li>
+      <li><a *ngIf="hardcodedAuthentificationService.isUserLoggedIn()" class="nav-link" routerLink="/animals-list">ANIMALS</a></li>
       <li><a *ngIf="hardcodedAuthentificationService.isUserLoggedIn()" class="nav-link" routerLink="/consultations">CONSULTATIONS</a></li>
       <li><a *ngIf="hardcodedAuthentificationService.isUserLoggedIn()" class="nav-link" routerLink="/prescriptions">PRESCRIPTIONS</a></li>
       <li><a *ngIf="hardcodedAuthentificationService.isUserLoggedIn()" class="nav-link" routerLink="/workingHours">WORKING HOURS</a></li>

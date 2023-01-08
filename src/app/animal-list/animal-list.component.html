@@ -8,7 +8,7 @@
       <th>Avatar</th>
       <th>Nickname</th>
       <th>Animal Type</th>
-      <th>Species</th>
+      <th>Specie</th>
       <th>Age</th>
       <th>Weight</th>
       <th colspan="2" class="text-center">EDIT</th>
@@ -19,7 +19,7 @@
       <td>{{animal.id}}</td>
       <td>{{animal.nickname}}</td>
       <td>{{animal.animalType}}</td>
-      <td>{{animal.species}}</td>
+      <td>{{animal.specie}}</td>
       <td>{{animal.age}}</td>
       <td>{{animal.weight}}</td>
       <td><button class="btn btn-success justify-content-center" (click)="updateAnimal(animal.id)">Update</button></td>
@@ -28,9 +28,13 @@
     </tbody>
 
     <div class="col-1 mt-2">
-      <button (click)="createAnimal()" class="btn btn-dark" >Create</button>
+      <button (click)="createAnimal()" routerLink="/create-animal" class="btn btn-dark" >Create</button>
     </div>
   </table>
-
+  <div class="container">
+    <div class="alert alert-success text-center " *ngIf="deleteMessage!=''">
+      Deleted Successfully!
+    </div>
+  </div>
 
 </div>

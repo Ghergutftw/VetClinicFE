@@ -13,14 +13,18 @@ import {RouterGuardService} from "./service/route-guard.service/router-guard.ser
 import {CreateDoctorComponent} from "./doctor-list/create-doctor/create-doctor.component";
 import {UsersComponent} from "./users/users.component";
 import {UpdateDoctorComponent} from "./doctor-list/update-doctor/update-doctor.component";
+import {CreateAnimalComponent} from "./animal-list/create-animal/create-animal.component";
+import {UpdateAnimalComponent} from "./animal-list/update-animal/update-animal.component";
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'welcome',component:WelcomeComponent , canActivate:[RouterGuardService]},
-  {path: 'animals',component:AnimalListComponent , canActivate:[RouterGuardService]},
+  {path: 'animals-list',component:AnimalListComponent , canActivate:[RouterGuardService]},
   {path: 'doctors-list',component:DoctorListComponent , canActivate:[RouterGuardService]},
   {path: 'create-doctor',component:CreateDoctorComponent , canActivate:[RouterGuardService]},
   {path: 'update-doctor/:id',component:UpdateDoctorComponent , canActivate:[RouterGuardService]},
+  {path: 'create-animal',component:CreateAnimalComponent , canActivate:[RouterGuardService]},
+  {path: 'update-animal/:id',component:UpdateAnimalComponent , canActivate:[RouterGuardService]},
   {path: 'users',component:UsersComponent , canActivate:[RouterGuardService]},
   {path: 'consultations',component:ConsultationsComponent , canActivate:[RouterGuardService]},
   {path: 'prescriptions',component:PrescriptionsComponent , canActivate:[RouterGuardService]},

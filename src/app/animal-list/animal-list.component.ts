@@ -6,7 +6,7 @@ export class Animal {
     public id: number,
     public nickname: string,
     public animalType: string,
-    public species: string,
+    public specie: string,
     public age: number,
     public weight: number
   ) {
@@ -19,6 +19,8 @@ export class Animal {
   styleUrls: ['./animal-list.component.css']
 })
 export class AnimalListComponent {
+
+  deleteMessage : string = ''
 
   animals: Animal[] | any
 
@@ -42,7 +44,18 @@ export class AnimalListComponent {
   }
 
   deleteAnimal(id : number) {
-
+    console.log(`DELETEING ANIMAL WITH ID OF ${id}`);
+    this.service.deleteAnimal(id).subscribe(
+      response =>{
+        console.log("DELETING")
+        this.deleteMessage = "DELETED SUCCESSFULLY"
+        this.refreshPage();
+        this.changeDeleteMessageInstantly()
+      },error =>{
+        console.log("An error has occured in delete animal")
+        this.deleteMessage = "AN ERROR HAS OCCURED"
+      }
+    )
   }
 
   updateAnimal(id : number) {
@@ -50,6 +63,12 @@ export class AnimalListComponent {
   }
 
   createAnimal() {
+    console.log("Creating animal")
+  }
 
+  changeDeleteMessageInstantly(){
+    setTimeout(() =>{
+      this.deleteMessage = '';
+    },2000)
   }
 }

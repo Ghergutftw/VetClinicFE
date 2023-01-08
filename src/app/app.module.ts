@@ -20,6 +20,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { CreateDoctorComponent } from './doctor-list/create-doctor/create-doctor.component';
 import { UsersComponent } from './users/users.component';
 import { UpdateDoctorComponent } from './doctor-list/update-doctor/update-doctor.component';
+import { CreateAnimalComponent } from './animal-list/create-animal/create-animal.component';
+import { UpdateAnimalComponent } from './animal-list/update-animal/update-animal.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { UpdateDoctorComponent } from './doctor-list/update-doctor/update-doctor
     WorkingHoursComponent,
     CreateDoctorComponent,
     UsersComponent,
-    UpdateDoctorComponent
+    UpdateDoctorComponent,
+    CreateAnimalComponent,
+    UpdateAnimalComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./create-doctor.component.css']
 })
 export class CreateDoctorComponent {
-  doctor!: Doctor
+  createdDoctor!: Doctor
 
   constructor(
     private service : DataService,
@@ -18,23 +18,23 @@ export class CreateDoctorComponent {
 
   }
   ngOnInit(){
-    this.doctor = new Doctor(0, "", "", "", 0, 0, undefined, undefined, undefined)
+    this.createdDoctor = new Doctor(0, "", "", "", 0, 0, undefined, undefined, undefined)
   }
 
 
   createDoctor(doctor : Doctor) {
     console.log(`Creating Doctor !`)
-    console.log(doctor.firstName)
-    this.doctor.firstName = doctor.firstName
-    this.doctor.lastName = doctor.lastName
-    this.doctor.speciality = doctor.speciality
-    this.doctor.age = doctor.age
-    this.doctor.yearsOfExperience = doctor.yearsOfExperience
-    this.doctor.email=doctor.email
-    this.doctor.password=doctor.password
-    this.service.createDoctor(this.doctor).subscribe(response =>{
+
+    this.createdDoctor.firstName = doctor.firstName
+    this.createdDoctor.lastName = doctor.lastName
+    this.createdDoctor.speciality = doctor.speciality
+    this.createdDoctor.age = doctor.age
+    this.createdDoctor.yearsOfExperience = doctor.yearsOfExperience
+    this.createdDoctor.email=doctor.email
+    this.createdDoctor.password=doctor.password
+    this.service.createDoctor(this.createdDoctor).subscribe(response =>{
       console.log(response)
-      this.router.navigate(["/doctor"])
+      this.router.navigate(["/doctors-list"])
     })
 
   }
