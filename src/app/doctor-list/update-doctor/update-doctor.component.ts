@@ -25,7 +25,6 @@ export class UpdateDoctorComponent {
   ngOnInit(){
     this.id=this.route.snapshot.params['id']
     console.log("Din init de la update 1")
-    this.doctor=new Doctor(0, "", "", "", 0, 0, undefined, undefined, undefined)
     this.service.retrieveDoctorById(this.id).subscribe(
       response =>{
         console.log(response)

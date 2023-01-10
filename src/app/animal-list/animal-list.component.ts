@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {DataService} from "../service/data.service";
+import {Router} from "@angular/router";
 
 export class Animal {
   constructor(
@@ -25,7 +26,8 @@ export class AnimalListComponent {
   animals: Animal[] | any
 
   constructor(
-    public service: DataService
+    public service: DataService,
+    public router:Router
   ) {
   }
 
@@ -59,7 +61,8 @@ export class AnimalListComponent {
   }
 
   updateAnimal(id : number) {
-
+    console.log("UPDATING DOCTOR");
+    this.router.navigate(["update-animal" , id])
   }
 
   createAnimal() {
