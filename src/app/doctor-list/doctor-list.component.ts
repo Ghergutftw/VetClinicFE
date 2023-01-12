@@ -10,9 +10,7 @@ export class Doctor{
     public speciality: string,
     public age: number,
     public yearsOfExperience: number,
-    public user: undefined,
-    public email: undefined,
-    public password: undefined
+    public user: User
   ){
   }
 

@@ -28,7 +28,7 @@ export class UpdateDoctorComponent {
     this.service.retrieveDoctorById(this.id).subscribe(
       response =>{
         console.log(response)
-        this.doctor = new Doctor(response.id,response.firstName, response.lastName, response.speciality, response.age, response.yearsOfExperience, response.user, response.email, response.password)
+        this.doctor = new Doctor(response.id, response.firstName, response.lastName, response.speciality, response.age, response.yearsOfExperience, response.user)
       }
     )
     console.log("Din init de la update 2")

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Alert, AlertService} from "./alert";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  options={
+    autoClose: false,
+    keepAfterRouteChange:false
+  };
   title = 'FE-VetClinic';
+
+  constructor(protected alertService:AlertService) {
+  }
 }

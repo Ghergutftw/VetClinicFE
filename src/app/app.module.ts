@@ -22,6 +22,7 @@ import { UsersComponent } from './users/users.component';
 import { UpdateDoctorComponent } from './doctor-list/update-doctor/update-doctor.component';
 import { CreateAnimalComponent } from './animal-list/create-animal/create-animal.component';
 import { UpdateAnimalComponent } from './animal-list/update-animal/update-animal.component';
+import {AlertModule} from "./alert";
 
 @NgModule({
   declarations: [
@@ -41,11 +42,12 @@ import { UpdateAnimalComponent } from './animal-list/update-animal/update-animal
     UsersComponent,
     UpdateDoctorComponent,
     CreateAnimalComponent,
-    UpdateAnimalComponent
+    UpdateAnimalComponent,
   ],
   imports: [
     BrowserModule,
     RouterOutlet,
+    AlertModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
