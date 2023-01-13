@@ -38,8 +38,12 @@
     </fieldset>
     <br>
     <fieldset class="form-group text-center">
-      <label>Password</label>
-      <input type="text" [(ngModel)]="doctor.user.role" class="form-control text-center" name="role" required = "required"  #role = "ngModel">
+      <label for="inputState">Role</label>
+      <select id="inputState" class="form-control text-center" name="role" [(ngModel)]="doctor.user.role" required="required" #role= "ngModel">
+        <option>ADMIN</option>
+        <option>DEV</option>
+        <option>USER</option>
+      </select>
     </fieldset>
     <br>
     <div class="btn-group">
