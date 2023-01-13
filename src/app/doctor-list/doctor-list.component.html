@@ -11,6 +11,7 @@
         <th>Speciality</th>
         <th>Age</th>
         <th>Years Of Experience</th>
+        <th>Role</th>
         <th colspan="2" class="text-center">EDIT</th>
       </tr>
     </thead>
@@ -22,6 +23,7 @@
       <td>{{doctor.speciality}}</td>
       <td>{{doctor.age}}</td>
       <td>{{doctor.yearsOfExperience}}</td>
+      <td>{{doctor.user.role}}</td>
       <td><button class="btn btn-success justify-content-center" (click)="updateDoctor(doctor.id)">Update</button></td>
       <td><button class="btn btn-danger" (click)="deleteDoctor(doctor.id)">Delete</button></td>
     </tr>

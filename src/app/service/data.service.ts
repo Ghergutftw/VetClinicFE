@@ -26,6 +26,7 @@ export class DataService {
   }
 
   createDoctor(doctor:Doctor){
+    console.log("API DOCTOR CREATE")
     return this.httpClient.post<Doctor>(`http://localhost:8080/doctor`,doctor)
   }
 
@@ -56,5 +57,7 @@ export class DataService {
   }
 
  // ANIMALS API
+ //USERS API
+
 
 }
