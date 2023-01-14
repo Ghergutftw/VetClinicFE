@@ -15,6 +15,7 @@ import {UsersComponent} from "./users/users.component";
 import {UpdateDoctorComponent} from "./doctor-list/update-doctor/update-doctor.component";
 import {CreateAnimalComponent} from "./animal-list/create-animal/create-animal.component";
 import {UpdateAnimalComponent} from "./animal-list/update-animal/update-animal.component";
+import {UpdateUserComponent} from "./users/update-user/update-user.component";
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'update-doctor/:id',component:UpdateDoctorComponent , canActivate:[RouterGuardService]},
   {path: 'create-animal',component:CreateAnimalComponent , canActivate:[RouterGuardService]},
   {path: 'update-animal/:id',component:UpdateAnimalComponent , canActivate:[RouterGuardService]},
-  {path: 'users',component:UsersComponent , canActivate:[RouterGuardService]},
+  {path: 'users-list',component:UsersComponent , canActivate:[RouterGuardService]},
+  {path: 'update-user/:id',component:UpdateUserComponent , canActivate:[RouterGuardService]},
   {path: 'consultations',component:ConsultationsComponent , canActivate:[RouterGuardService]},
   {path: 'prescriptions',component:PrescriptionsComponent , canActivate:[RouterGuardService]},
   {path: 'workingHours',component:WorkingHoursComponent , canActivate:[RouterGuardService]},

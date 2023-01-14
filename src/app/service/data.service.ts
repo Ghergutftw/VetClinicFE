@@ -61,11 +61,19 @@ export class DataService {
  //USERS API
 
   getAllUsers(){
-    return this.httpClient.get<User>('http://localhost:8080/users')
+    return this.httpClient.get<User[]>('http://localhost:8080/users')
   }
 
   updateUserById(id: number , user:User){
     return this.httpClient.put(`http://localhost:8080/user/${id}`,user)
+  }
+
+  retrieveUserById(id:number){
+    return this.httpClient.get<User>(`http://localhost:8080/user/${id}`)
+  }
+
+  getDecodedString(encodedPassword : string){
+    return this.httpClient.get<string>(`http://localhost:8080/getDecoded/${encodedPassword}`);
   }
 
 // USERS API

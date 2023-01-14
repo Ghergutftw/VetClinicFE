@@ -23,6 +23,8 @@ import { UpdateDoctorComponent } from './doctor-list/update-doctor/update-doctor
 import { CreateAnimalComponent } from './animal-list/create-animal/create-animal.component';
 import { UpdateAnimalComponent } from './animal-list/update-animal/update-animal.component';
 import {AlertModule} from "./alert";
+import { UpdateUserComponent } from './users/update-user/update-user.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import {AlertModule} from "./alert";
     UpdateDoctorComponent,
     CreateAnimalComponent,
     UpdateAnimalComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import {AlertModule} from "./alert";
     AlertModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

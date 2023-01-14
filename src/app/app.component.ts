@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Alert, AlertService} from "./alert";
+import {faGithub} from "@fortawesome/free-brands-svg-icons";
+
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,14 @@ export class AppComponent {
   };
   title = 'FE-VetClinic';
 
+  faGitHub = faGithub
+
   constructor(protected alertService:AlertService) {
   }
+
+  sites: string[] =[
+    'Github'
+  ]
+
+
 }

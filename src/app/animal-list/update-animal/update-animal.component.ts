@@ -22,6 +22,7 @@ export class UpdateAnimalComponent {
   }
   ngOnInit(){
     this.id=this.route.snapshot.params['id'];
+    this.animal = new Animal(0, "", "", "", 0, 0)
     console.log("Din init update animal")
     this.service.retrieveAnimalById(this.id).subscribe(
       response=>{
