@@ -75,6 +75,9 @@ export class DataService {
   getDecodedString(encodedPassword : string){
     return this.httpClient.get<string>(`http://localhost:8080/getDecoded/${encodedPassword}`);
   }
+  getEncodedString(decodedPassword : string){
+    return this.httpClient.get<string>(`http://localhost:8080/getEncoded/${decodedPassword}`);
+  }
 
 // USERS API
 }

@@ -29,13 +29,15 @@ export class UpdateUserComponent implements OnInit{
       response=>{
         console.log(response)
         this.user = response;
+        this.service.getDecodedString(this.user.password).subscribe(
+          responseDecoded=>{
+            console.log(responseDecoded);
+            this.user.password = responseDecoded
+          }
+        )
       }
     )
-    this.service.getDecodedString(this.user.password).subscribe(
-      response=>{
-        console.log(response)
-      }
-    )
+
   }
 
   updateUser(id:number) {
