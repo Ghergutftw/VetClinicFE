@@ -10,7 +10,7 @@ export class HardcodedAuthentificationService {
     public service:DataService
   ) { }
 
-  users !: User[]
+  users : User[] | any
 
   ngOnInit(){
     this.users = [];
@@ -19,7 +19,6 @@ export class HardcodedAuthentificationService {
         console.log(value)
         this.users = value;
       }
-
     )
   }
 
@@ -30,6 +29,7 @@ export class HardcodedAuthentificationService {
     }else {
       return false;
     }
+
   }
 
   isUserLoggedIn(){
@@ -39,5 +39,15 @@ export class HardcodedAuthentificationService {
 
   logOut(){
     sessionStorage.removeItem("Authenticated User")
+  }
+
+  // @ts-ignore
+  existsInDb(username:string,password:string){
+    for (let i = 0; i < this.users.length; i++) {
+      if(password == this.users.at(i).password && username ==this.users.at(i).email){
+        return true;
+      }
+    }
+
   }
 }
