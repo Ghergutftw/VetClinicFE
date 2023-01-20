@@ -21,12 +21,15 @@ export class UsersComponent {
 
   users : User[] | any
 
+  numberOfPresses : number = 0;
+
   constructor(public dataService:DataService,
               public router:Router) {
   }
 
   ngOnInit(){
-     this.refreshPage()
+    this.refreshPage()
+    this.numberOfPresses = 0 ;
   }
 
   refreshPage(){
@@ -57,6 +60,15 @@ export class UsersComponent {
       )
     }
 
+  }
+
+  handlePassword(){
+    this.numberOfPresses ++;
+    if(this.numberOfPresses % 2 === 1){
+      this.decrypt()
+    }else{
+      this.encrypt()
+    }
   }
   encrypt() {
     console.log("Encrypting password");

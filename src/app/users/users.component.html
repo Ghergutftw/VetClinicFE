@@ -9,7 +9,7 @@
       <th>Role</th>
       <th>Email</th>
       <th>Password
-      <span (mousedown)="decrypt()" (mouseup)="encrypt()" class="btn btn-secondary small"> @ </span></th>
+      <span (click)="handlePassword()" class="btn btn-secondary small"></span></th>
       <th class="text-center">EDIT</th>
     </tr>
     </thead>
@@ -22,15 +22,5 @@
       <td><button class="btn btn-success justify-content-center" (click)="updateUser(user.id)">Update</button></td>
     </tr>
     </tbody>
-
-<!--    <div class="col-1 mt-2">-->
-<!--      <button (click)="createDoctor()" routerLink="/create-doctor" class="btn btn-dark" >Create</button>-->
-<!--    </div>-->
   </table>
-<!--  <div class="container">-->
-<!--    <div class="alert alert-success text-center " *ngIf="deleteMessage!=''">-->
-<!--      Deleted Successfully!-->
-<!--    </div>-->
-<!--  </div>-->
-
 </div>

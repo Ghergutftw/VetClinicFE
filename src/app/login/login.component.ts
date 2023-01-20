@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {Data, Router} from "@angular/router";
 import {delay, timeout} from "rxjs";
 import {HardcodedAuthentificationService} from "../service/hardcoded-authentification.service";
+import {DataService} from "../service/data.service";
+import {User} from "../users/users.component";
 
 @Component({
   selector: 'app-login',
@@ -16,10 +18,25 @@ export class LoginComponent {
   password : string | undefined
   invalidLogin : boolean | unknown
 
+  users !: User[]
+
+
   constructor( public router : Router ,
-               public hardcodedAuthentificationService: HardcodedAuthentificationService) {
+               public hardcodedAuthentificationService: HardcodedAuthentificationService,
+               public service:DataService
+  ) {
   }
 
+  ngOnInit(){
+    this.users = [];
+    this.service.getAllUsers().subscribe(
+      value => {
+        console.log(value)
+        this.users = value;
+      }
+    )
+
+  }
   handleLogin() {
     console.log(`Username : ${this.username}`)
     console.log(`Password : ${this.password}`)
